@@ -5,10 +5,10 @@ dftop <- data.frame()
 # open connection to aws db
 open <- function() {
   con <- dbConnect(RMySQL::MySQL(), 
-                   user = "readonly", 
-                   password = "2bguxmYsYDCevEUEP33EjYWVmQyGAF", 
-                   host = "recommender-snapshot-replica.c7bp7cmon09v.us-east-1.rds.amazonaws.com", 
-                   dbname = "recommender")
+                   user = "", 
+                   password = "", 
+                   host = "", 
+                   dbname = "")
   
   query <- function(...) dbGetQuery(con, ...)
 
