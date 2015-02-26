@@ -66,7 +66,7 @@ trainit <- function() {
   
   #predict based on test set
   print("prediction")
-  predictions <- predict(model$finalModel, data_test[,-ncol(data_test)])
+  predictions <- predict(model, data_test[,-ncol(data_test)])
   
   #calculate confusion matrix
   #confusionMatrix <- confusionMatrix(predictions, data_test$cat_)
