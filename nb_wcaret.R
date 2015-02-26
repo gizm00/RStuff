@@ -21,16 +21,12 @@ bagit <- function(df, booleanify=FALSE) {
   
   # create DTM and label with category
   dtm = DocumentTermMatrix(corpusItemBodies)
+  labeledTerms = as.data.frame(as.matrix(dtm))
   
   if (booleanify) {
     # convert all 0s to false and all 1 or > 1 to true
-    labeledTerms <- as.data.frame(as.matrix(dtm))
     labeledTerms[,] <- ifelse(labeledTerms>=1,1,0)
   }
-  else {
-    labeledTerms = as.data.frame(as.matrix(dtm))
-  }
-  
   
   labeledTerms$cat_ = df$category_major
   print (head(labeledTerms))
