@@ -45,6 +45,7 @@ getTerms <- function(corpusItemBodies, withStem=FALSE, sparse=0.9) {
                              weightTfIdf(x, normalize = FALSE)))
   
   # remove sparse terms
+  gc()  #garbage collection
   terms = removeSparseTerms(dtm, sparse)
   terms = as.data.frame(as.matrix(terms))
   terms
